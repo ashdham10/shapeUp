@@ -1,0 +1,12 @@
+.shape-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: grey;
+}
+.circle {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+

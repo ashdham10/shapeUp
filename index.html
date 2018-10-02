@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>freakin shapes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div id="inputContainer" class="row ml-2 mt-3">
+    <div class="col-3" id="circle">
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Radius</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Radius">
+          
+            <button type="input" class="btn btn-primary mb-2" id="circleButton">Get Circle</button>
+          </form>  
+    </div>
+    <div class="col-3" id="triangle">
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Height</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Height">
+
+            <button type="input" class="btn btn-primary mb-2" id="triangleButton">Get Triangle</button>
+          </form>
+    </div>
+    <div class="col-3" id="rectangle">
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Height</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Height">
+          
+            <label class="sr-only" for="inlineFormInputGroupUsername2">Width</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Width">
+            </div>
+          
+            <button type="input" class="btn btn-primary mb-2" id="rectangleButton">Get Rectangle</button>
+          </form> 
+    </div>
+    <div class="col-3" id="square">
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Side Length</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Side Length">
+          
+            <button type="input" class="btn btn-primary mb-2" id="squareButton">Get Square</button>
+          </form>
+    </div>  
+ </div>
+ <div class="row mt-5">
+    <div class="shape-container" id="shapeContainer"></div>
+ </div>
+    
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>
