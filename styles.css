@@ -3,10 +3,29 @@
     height: 600px;
     margin: 0 auto;
     background-color: grey;
-}
-.circle {
-	width: 100px;
-	height: 100px;
-	background: red;
+    position: relative;
 }
 
+.circle {
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+    position: absolute;
+}
+
+.rectangle {
+    background: yellow;
+    position: absolute;
+}
+
+.square {
+    background: green;
+    position: absolute;
+}
