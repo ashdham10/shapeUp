@@ -18,6 +18,10 @@
 	width: 0;
 	height: 0;
     position: absolute;
+    border-bottom-style: solid;
+    border-bottom-color: blue;
+    border-left-style: solid;
+    border-left-color: transparent;
 }
 
 .rectangle {

@@ -8,19 +8,25 @@ document.addEventListener('DOMContentLoaded', function () {
     let triangleBtn = document.getElementById('triangleButton');
     let rectangleBtn = document.getElementById('rectangleButton');
     let squareBtn = document.getElementById('squareButton');
-
+    let triangleInput = document.getElementById('triangleInput');
+    let circleInput = document.getElementById('circleInput');
+    let rectangleInputWidth = document.getElementById('rectangleInputWidth');
+    let rectangleInputHeight = document.getElementById('rectangleInputHeight');
+    let squareInput = document.getElementById('squareInput');
+    
     class Shape {
         constructor(x, y) {
             this.shape = document.createElement('div');
-            shapeContainer.appendChild(this.shape);
             this.shape.style.left = `${x}px`;
-            this.shape.style.top = `${y}px`
+            this.shape.style.top = `${y}px`;
+            shapeContainer.appendChild(this.shape);
             this.removeShape();
         }
-        removeShape(){
+
+        removeShape() {
             this.shape.addEventListener('dblclick', () => {
                 shapeContainer.removeChild(this.shape);
-            })
+            });
         }
     }
 
@@ -28,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         constructor(x, y) {
             super(x, y);
             this.shape.classList.add('circle');
-            this.shape.style.height = `${document.getElementById('circleInput').value}px`;
-            this.shape.style.width = `${document.getElementById('circleInput').value}px`;
+            this.shape.style.height = `${circleInput.value}px`;
+            this.shape.style.width = `${circleInput.value}px`;
             console.log(this.shape.style.height);
         }
     }
@@ -38,12 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         constructor(x, y) {
             super(x, y);
             this.shape.classList.add('triangle');
-            this.shape.style.borderBottomStyle = 'solid';
-            this.shape.style.borderBottomColor = 'blue';
-            this.shape.style.borderLeftStyle = 'solid';
-            this.shape.style.borderLeftColor = 'transparent';
-            this.shape.style.borderBottomWidth = `${document.getElementById('triangleInput').value}px`;
-            this.shape.style.borderLeftWidth = `${document.getElementById('triangleInput').value}px`;
+            this.shape.style.borderBottomWidth = `${triangleInput.value}px`;
+            this.shape.style.borderLeftWidth = `${triangleInput.value}px`;
 
         }
     }
@@ -52,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         constructor(x, y) {
             super(x, y);
             this.shape.classList.add('rectangle');
-            this.shape.style.height = `${document.getElementById('rectangleInputHeight').value}px`;
-            this.shape.style.width = `${document.getElementById('rectangleInputWidth').value}px`;
+            this.shape.style.height = `${rectangleInputHeight.value}px`;
+            this.shape.style.width = `${rectangleInputWidth.value}px`;
         }
     }
 
@@ -61,42 +63,37 @@ document.addEventListener('DOMContentLoaded', function () {
         constructor(x, y) {
             super(x, y);
             this.shape.classList.add('square');
-            this.shape.style.height = `${document.getElementById('squareInput').value}px`;
-            this.shape.style.width = `${document.getElementById('squareInput').value}px`;
+            this.shape.style.height = `${squareInput.value}px`;
+            this.shape.style.width = `${squareInput.value}px`;
         }
     }
 
-circleBtn.addEventListener('click', insertCircle);
-triangleBtn.addEventListener('click', insertTriangle);
-rectangleBtn.addEventListener('click', insertRectangle);
-squareBtn.addEventListener('click', insertSquare);
+    circleBtn.addEventListener('click', insertCircle);
+    triangleBtn.addEventListener('click', insertTriangle);
+    rectangleBtn.addEventListener('click', insertRectangle);
+    squareBtn.addEventListener('click', insertSquare);
 
-function insertCircle(){
-    let xVal = randomLocation(0, MAX);
-    let yVal = randomLocation(0, MAX);
-    let cir = new Circle(xVal, yVal);
-}
+    function insertCircle(){
+        new Circle(...randomLocation());
+    }
 
-function insertTriangle(){
-    let xVal = randomLocation(0, MAX);
-    let yVal = randomLocation(0, MAX);
-    let tri = new Triangle(xVal, yVal);
-}
+    function insertTriangle(){
+        new Triangle(...randomLocation());
+    }
 
-function insertRectangle(){
-    let xVal = randomLocation(0, MAX);
-    let yVal = randomLocation(0, MAX);
-    let rec = new Rectangle(xVal, yVal);
-}
+    function insertRectangle(){
+        new Rectangle(...randomLocation());
+    }
 
-function insertSquare(){
-    let xVal = randomLocation(0, MAX);
-    let yVal = randomLocation(0, MAX);
-    let sq = new Square(xVal, yVal);
-}
+    function insertSquare(){
+        new Square(...randomLocation());
+    }
 
-function randomLocation(max, min){
- return Math.floor(Math.random() * (max - min) + min);
-}
+    function randomLocation() {
+        return [
+            Math.floor(Math.random() * (MAX)), 
+            Math.floor(Math.random() * (MAX))
+        ];
+    }
 
 });
